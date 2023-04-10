@@ -6,6 +6,7 @@ const Sidebar = () => {
   const [currentPage , setCurrentPage] = useState(1);
   const [postPerPage ] = useState(5);
   const [modules, setModules] = useState([])
+  const [errorOnLoad, setErrorOnLoad] = useState(false);
 
   
   const onDragStart = (event, nodeData) => {
@@ -17,7 +18,10 @@ const Sidebar = () => {
   const loadModules = async (page=1, limit=5) => {
     const response = await fetch(`${FETCH_MODULE_URL}?page=${page}&limit=${limit}`);
     const jsonData = await response.json();
+    if(Array.isArray(jsonData))
     setModules(jsonData);
+    else
+    setErrorOnLoad(true);
   }
 
   useEffect(()=>{
@@ -31,6 +35,7 @@ const Sidebar = () => {
 
   return (
     <div className="list-nodes w-40 border-end h-300">
+      {!errorOnLoad ?(<>
        <div className=' border p-2'>Modules</div>
       <div className='workflow-slide'>
     {modules.map((data) => (
@@ -41,7 +46,8 @@ const Sidebar = () => {
       </div>))}
       <Pagination totalPosts={99} setCurrentPage={setCurrentPage}
      currentPage={currentPage}/>
-     </div>
+     </div></>): <p className='text-danger'>"Too Many Requests try next time"</p>
+     }
   </div>
   );
 };

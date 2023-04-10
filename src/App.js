@@ -27,7 +27,8 @@ const App = () => {
   } 
 
   const backToHomePage = () => {
-    setWorkflowId(null)
+    setWorkflowId(null);
+    setWorkflowData(null);
   }
 
    useEffect(()=>{

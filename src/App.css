@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+/* HomePage Css */
+.table_head {
+  background-color: #5a3deb;
+}
+
+.table {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.container {
+  width: 100%;
+  border: 1px solid black;
+
+}
+
+/* Design workflow Page css  */
+.workflow_container {
+  width: 350px;
+  border: 1px solid #ADD8E6;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.workflow_inputype1 {
+  width: 20%;
+  border-right: 1px solid #ADD8E6;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.workflow_name {
+  width: 60%;
+  overflow: hidden;
+  background-color: #F0F8FF;
+  color: grey;
+
+}
+
+.workflow_inputype2 {
+  width: 20%;
+  border-left: 1px solid #ADD8E6;
+  font-weight: bold;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.border_clr {
+  border-color: #ADD8E6;
+}
+
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow aside {
+  border-right: 1px solid #eee;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #fcfcfc;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .dndnode {
+  height: 20px;
+  padding: 4px;
+  border: 1px solid #1a192b;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.dndflow .dndnode.input {
+  border-color: #0041d0;
+}
+
+.dndflow .dndnode.output {
+  border-color: #ff0072;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow .selectall {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
+  }
+
+  .dndflow aside {
+    width: 20%;
+    max-width: 250px;
+  }
+}
+.pagination{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  margin-top: 1rem;
+  /* padding-left: 20px;*/
+  margin-left: 32px; 
+  overflow: hidden;
+  position: absolute;
+  bottom: 20px;
+}
+.pagination button{
+  margin :0 16px;
+  transition:all 0.3s ease;
+  background: transparent;
+   font-size: 14px;
+   font-weight: 600;
+   font-family: inherit;
+   border:none;
+}
+.pagination button.active{
+  font-weight: bolder;
+  background-color:black;
+  color:white;
+ border:1px solid black;
+ width:32px;
+ border-radius: 50%;
+ overflow: hidden;
+}
+
+.workflow-slide{
+  height:300px;
+}
